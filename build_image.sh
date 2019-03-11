@@ -97,8 +97,8 @@ sudo umount /mnt/rockchip
 
 echo "Done"
 
-cp $ROOTFS_FOLDER/rootfs.img $PACK_TOOLS_FOLDER/linux/linux-rootfs.img
-cp $BOOTIMG_FOLDER/boot.img $PACK_TOOLS_FOLDER/linux/linux-boot.img
+sudo cp $ROOTFS_FOLDER/rootfs.img $PACK_TOOLS_FOLDER/linux/linux-rootfs.img
+sudo cp $BOOTIMG_FOLDER/boot.img $PACK_TOOLS_FOLDER/linux/linux-boot.img
 
 cd $PACK_TOOLS_FOLDER
 
