@@ -8,7 +8,7 @@ mk(){
 }
 
 mk_config(){
-	mk rk3066a_box_defconfig
+	mk rk3066_marsboard_defconfig
 }
 
 mk_zImage(){
