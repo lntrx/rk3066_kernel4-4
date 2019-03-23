@@ -239,18 +239,16 @@
 };
 
 &emac {
-	status = "okay";
-
+	pinctrl-names = "default";
+	pinctrl-0 = <&emac_xfer>, <&emac_mdio>, <&rmii_rst>;
 	phy = <&phy0>;
 	phy-supply = <&vcc_rmii>;
-
-	pinctrl-names = "default";
-	pinctrl-0 = <&emac_xfer>, <&emac_mdio>, <&phy_int>;
+	phy-reset-gpios = <&gpio1 30 GPIO_ACTIVE_LOW>; /* PHY_RST */
+	phy-reset-duration = <10>; /* millisecond */
+	status = "okay";
 
 	phy0: ethernet-phy@0 {
 		reg = <0>;
-		interrupt-parent = <&gpio1>;
-		interrupts = <26 IRQ_TYPE_LEVEL_LOW>;
 	};
 };
 
@@ -541,11 +539,6 @@
 
 		wifi_host_wake: wifi-host-wake {
 			rockchip,pins = <1 26 RK_FUNC_GPIO &pcfg_pull_none>;
-		};
-	};
-	lan8720a {
-		phy_int: phy-int {
-			rockchip,pins = <RK_GPIO1 26 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
 	};
 };
