@@ -570,6 +570,12 @@
 	status = "okay";
 };
 
+&uart1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart1_xfer>, <&uart1_cts>;
+	status = "okay";
+};
+
 &uart2 {
 	status = "okay";
 };
